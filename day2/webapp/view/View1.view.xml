@@ -1,0 +1,79 @@
+<mvc:View controllerName="pc.day2.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:local="pc.day2.custom">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<local:customHeading prop1="New"></local:customHeading>
+						<Table
+							id="carrtab"
+							selectionChange="onSelectionChange"
+							items="{/data}"
+							mode="SingleSelect"
+							>
+							<columns>
+								<Column>
+									<Text text='{i18n>Col1}'></Text>
+								</Column>
+								<Column>
+									<Text text='{i18n>Col2}'></Text>
+								</Column>
+								<Column>
+									<Text text='{i18n>Col3}'></Text>
+								</Column>
+								<Column>
+									<Text text='{i18n>Col4}'></Text>
+								</Column>
+								
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Button 
+										text="{carrier/carrId}"
+										enabled="{= ${carrier/carrId} === 'LH'}"
+										press="butPress"></Button>
+										<Text text="{carrier/carrName}"/>
+										<Text text="{carrier/currCode}"/>
+										<Text text="{carrier/url}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+							
+						</Table>
+						
+						<Table
+							id="conntab"
+							items="{connections}"
+							>
+							<columns>
+								<Column>
+									<Text text='{i18n>Col11}'></Text>
+								</Column>
+								<Column>
+									<Text text='{i18n>Col12}'></Text>
+								</Column>
+								<Column>
+									<Text text='{i18n>Col13}'></Text>
+								</Column>
+								
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{connId}"/>
+										<Text text="{cityFrom}"/>
+										<Text text="{cityTo}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+							
+						</Table>
+						
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

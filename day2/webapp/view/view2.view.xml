@@ -1,0 +1,38 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="pc.day2.controller.view2"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="app">
+		<pages>
+			<Page title="Title" navButtonPress="back" showNavButton="true">
+				<content>
+					<Table
+							id="sctab"
+							items="{connections}"
+							>
+							<columns>
+								<Column>
+									<Text text='{i18n>Col11}'></Text>
+								</Column>
+								<Column>
+									<Text text='{i18n>Col12}'></Text>
+								</Column>
+								<Column>
+									<Text text='{i18n>Col13}'></Text>
+								</Column>
+								
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{connId}"/>
+										<Text text="{cityFrom}"/>
+										<Text text="{cityTo}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+							
+						</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
